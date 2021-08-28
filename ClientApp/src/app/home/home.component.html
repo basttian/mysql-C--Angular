@@ -1,0 +1,23 @@
+<h1>Hello, world!</h1>
+
+<form #f="ngForm" (ngSubmit)="alta(f)" novalidate>
+  <input type="text" name="name" ngModel required #first="ngModel">
+  <input type="number" name="age" ngModel>
+  <button [disabled]="!f.valid">Guardar Informacion</button>
+</form>
+
+<hr>
+
+<div *ngIf="haydatos; else sindatos">
+<div *ngFor="let info of infos">
+
+  <p>
+    <input type="text" [(ngModel)]="info.name" >
+    <input type="number" [(ngModel)]="info.age" >
+    <button type="button" (click)="modificar(info.id, data={id:info.id ,name: info.name, age: info.age})" >Modificar</button>
+    <button type="button" (click)="baja(info.id)" >Eliminar</button>
+  </p>
+
+</div>
+</div>
+<ng-template #sindatos><p>No hay datos.</p></ng-template>

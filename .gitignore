@@ -72,6 +72,13 @@ typings/
 .env
 .env.test
 
+/bin
+/ClientApp/node_modules
+/.vscode
+/obj
+
+
+
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 
